@@ -489,7 +489,7 @@ func (i *installer) waitForControlPlane(ctx context.Context) error {
 		return callErr
 	}
 
-	removeUninitializedTaint := common.RemoveUninitializedTaint(cluster.Platform)
+	removeUninitializedTaint := false
 	if err = i.waitForMinMasterNodes(ctx, kc, removeUninitializedTaint); err != nil {
 		return err
 	}
